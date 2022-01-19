@@ -1,0 +1,8 @@
+#!/bin/bash
+
+file="codontable.txt"
+name=${file%.*}
+output="transformed-${name}.tsv"
+touch "$output"
+
+cat "$file" | xargs -L 12 echo | awk '{printf ("%s\t%s\t%s\n%s\t%s\t%s\n%s\t%s\t%s\n%s\t%s\t%s\n\n", $1, $5, $9, $2, $6, $10, $3, $7, $11, $4, $8, $12)}' > "$output"
