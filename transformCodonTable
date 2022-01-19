@@ -1,4 +1,5 @@
 #!/bin/bash
+cd resources
 
 file="codontable.txt"
 name=${file%.*}
